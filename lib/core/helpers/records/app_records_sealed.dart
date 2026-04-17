@@ -1,5 +1,5 @@
-import '../exceptions/app_exception.dart';
 import 'app_records.dart';
+import '../exceptions/app_exception.dart';
 
 sealed class AppResponse {
   static Res<T, E> success<T, E>({required T data}) => (data: data, error: null);
