@@ -1,0 +1,1 @@
+enum NetworkEmum { DIO, HTTP }
