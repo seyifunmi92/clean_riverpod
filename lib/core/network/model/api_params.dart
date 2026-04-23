@@ -1,7 +1,7 @@
-import 'package:clean_architechture_kit_riverpod/core/network/model/method.dart';
+import 'package:clean_architechture_kit_riverpod/core/network/settings/enum.dart';
 
 class ApiParams<T> {
-  T Function(Map<String, dynamic> m)? mapper;
+  T Function(Map<String, dynamic> m) mapper;
   APIMETHOD method;
   Map<String, dynamic>? request, query;
   String path;

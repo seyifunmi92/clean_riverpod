@@ -9,8 +9,6 @@ class AppException with _$AppException {
   const factory AppException.mapper({required String message, int? code}) = MapperException;
   const factory AppException.validation({required String message, int? code}) = ValidationException;
 
-
-
   @override
   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }

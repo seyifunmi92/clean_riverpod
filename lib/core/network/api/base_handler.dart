@@ -2,9 +2,5 @@ import 'package:clean_architechture_kit_riverpod/core/network/model/api_params.d
 import 'package:clean_architechture_kit_riverpod/core/network/model/api_response.dart';
 
 abstract class ApiBaseHandler {
-  Future<ApiResponse> get();
-  Future<ApiResponse> post();
-  Future<ApiResponse> put();
-  Future<ApiResponse> patch();
-  Future<ApiResponse> delete({required ApiParams params});
+  Future<ApiResponse> call({required ApiParams params});
 }
