@@ -4,12 +4,14 @@ import 'package:clean_architechture_kit_riverpod/core/network/api/base.dart';
 import 'package:clean_architechture_kit_riverpod/core/network/api/base_impl.dart';
 import 'package:clean_architechture_kit_riverpod/core/network/settings/enum.dart';
 import 'package:clean_architechture_kit_riverpod/core/network/settings/entry.dart';
+import 'package:clean_architechture_kit_riverpod/core/base/repository/user_repository.dart';
 
 sealed class ServiceLocator {
   static register({required NetworkEmum network}) {
     //network
     getit
       ..registerSingleton<NetworkSelector>(network == NetworkEmum.DIO ? NetworkSelector.dio : NetworkSelector.http)
-      ..registerLazySingleton<ApiBase>(() => Api(base: networkSelector.api));
+      ..registerLazySingleton<ApiBase>(() => Api(base: networkSelector.api))
+      ..registerSingleton<UserRepository>(UserRepository.instance);
   }
 }
